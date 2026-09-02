@@ -31,6 +31,15 @@ module Api
         end
       end
 
+      def create_from_ai
+        task = Ai::TaskBreakdownService.new(title: params[:title], user: current_user).call
+        render json: task.as_json(include: :subtasks), status: :created
+           rescue Ai::TaskBreakdownService::ParseError => e
+        render json: { error: "AI response could not be processed", details: e.message }, status: :unprocessable_entity
+          rescue ActiveRecord::RecordInvalid => e
+        render json: { errors: e.record.errors.full_messages }, status: :unprocessable_entity
+      end
+
       def destroy
         @task.destroy
         head :no_content
