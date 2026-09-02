@@ -7,6 +7,10 @@ Rails.application.routes.draw do
         post "login", to: "sessions#create"
         get "up" => "rails/health#show", as: :rails_health_check
       end
+
+      resources :tasks
     end
   end
 end
+
+
