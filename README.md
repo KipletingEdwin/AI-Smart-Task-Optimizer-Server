@@ -3,7 +3,7 @@
 
 The Rails API for [AI Smart Task Optimizer](#) — an AI-powered to-do app that breaks a plainly-written task into an ordered checklist of sub-steps with time estimates.
 
-Frontend repo: [ai-smart-task-optimizer-client](#) *(update link once created)*
+Frontend repo: [https://github.com/KipletingEdwin/AI-Smart-Task-Optimizer]
 
 ## How it works
 
