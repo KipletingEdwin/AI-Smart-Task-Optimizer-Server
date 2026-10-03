@@ -10,7 +10,7 @@ module Api
 
           if user.save
             token = JsonWebToken.encode({ user_id: user.id })
-            render json: { token: token, user: { id: user.id, email: user.email } }, status: :created
+            render json: { token: token, user: { id: user.id, email: user.email, name: user.name } }, status: :created
           else
             render json: { errors: user.errors.full_messages }, status: :unprocessable_entity
           end
@@ -19,7 +19,7 @@ module Api
         private
 
         def user_params
-          params.require(:user).permit(:email, :password, :password_confirmation)
+          params.require(:user).permit(:email, :password, :password_confirmation, :name)
         end
       end
     end
