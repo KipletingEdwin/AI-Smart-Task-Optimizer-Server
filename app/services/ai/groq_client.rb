@@ -1,3 +1,4 @@
+
 require "net/http"
 require "uri"
 require "json"
@@ -8,7 +9,7 @@ module Ai
     MODEL = "openai/gpt-oss-120b".freeze
 
     def initialize
-      @api_key = Rails.application.credentials.dig(:groq, :api_key)
+      @api_key = ENV.fetch("GROQ_API_KEY")
     end
 
     def chat(system_prompt:, user_message:)

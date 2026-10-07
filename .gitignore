@@ -10,6 +10,7 @@
 # Ignore all environment files.
 /.env*
 
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
@@ -30,4 +31,6 @@
 
 # Ignore key files for decrypting credentials and more.
 /config/*.key
+
+GROQ_API_KEY=your_actual_key_here
 
